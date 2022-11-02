@@ -41,7 +41,6 @@ public class StepTracker {
                     return;
                 }
 
-
             if (stepsInMonth.containsKey(month)) {
                 stepsInMonth.get(month).set((day - 1), steps);
                 System.out.println("Значение сохранено!");
@@ -85,7 +84,7 @@ public class StepTracker {
             System.out.println("Введен несуществующий месяц");
         }
     }
-    void changePurposeOfDailySteps(int newTargetSteps) {
+    void newTargetSteps(int newTargetSteps) {
         if (newTargetSteps < 0) {
             System.out.println("В количестве шагов недопустимо использование отрицательных чисел");
         } else {

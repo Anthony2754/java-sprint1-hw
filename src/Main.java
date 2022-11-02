@@ -26,7 +26,7 @@ public class Main {
             } else if (userInput == 3) {
                 System.out.println("Введите новую цель по количеству шагов в день:");
                 int newTargetSteps = scanner.nextInt();
-                stepTracker.changePurposeOfDailySteps(newTargetSteps);
+                stepTracker.newTargetSteps(newTargetSteps);
 
             } else {
                 System.out.println("Извините, такой команды пока нет.");
@@ -37,7 +37,6 @@ public class Main {
         }
         System.out.println("Программа завершена");
     }
-
     public static void printMenu() {
         System.out.println("Что вы хотите сделать?");
         System.out.println("1 - Ввести количество шагов за определённый день");

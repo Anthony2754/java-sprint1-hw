@@ -73,8 +73,6 @@ public class StepTracker {
                     bestSeries = Math.max(bestSeries, thisSeries);
                 } else {
 
-                    //как только вбиваем 30 день который больше цели шагов а когда меньше кол-ва цели то все нормально
-                    // это связанно имено с тем что это последний день в месяце
                     thisSeries = 0;
                 }
             }

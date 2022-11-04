@@ -21,7 +21,7 @@ public class Main {
             } else if (userInput == 2) {
                 System.out.println("За какой месяц вы хотите посмотреть статистику: 1 - Январь, 2 - Февраль, 3 - Март, 4 - Апрель, 5 - Май, 6 - Июнь, 7 - Июль, 8 - Август, 9 - Сентябрь, 10 - Октябрь, 11 - Ноябрь, 12 - Декабрь");
                 int month = scanner.nextInt();
-                stepTracker.Statistic(month);
+                stepTracker.statistic(month);
 
             } else if (userInput == 3) {
                 System.out.println("Введите новую цель по количеству шагов в день:");

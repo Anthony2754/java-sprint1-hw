@@ -30,25 +30,25 @@ public class StepTracker {
     }
 
     public void saveStepTracker(int month, int day, int steps) {
-        if (month < 1 | month > 12) {
+        if (month < 1 || month > 12) {
             System.out.println("Введен несуществующий месяц");
             return;
-        } else if (day < 1 | day > 30) {
-                System.out.println("Введен несуществующий день");
-                return;
-            } else if (steps < 0) {
-                    System.out.println("В количестве шагов недопустимо использование отрицательных чисел");
-                    return;
-                }
+        } else if (day < 1 || day > 30) {
+            System.out.println("Введен несуществующий день");
+            return;
+        } else if (steps < 0) {
+            System.out.println("В количестве шагов недопустимо использование отрицательных чисел");
+            return;
+        }
 
-            if (stepsInMonth.containsKey(month)) {
-                stepsInMonth.get(month).set((day - 1), steps);
-                System.out.println("Значение сохранено!");
-            }
+        if (stepsInMonth.containsKey(month)) {
+            stepsInMonth.get(month).set((day - 1), steps);
+            System.out.println("Значение сохранено!");
+        }
 
     }
 
-    public void Statistic(int month) {
+    public void statistic(int month) {
         int sumSteps = 0;
         int maxSteps = 0;
         int maxStepsInDay = 0;
@@ -57,9 +57,10 @@ public class StepTracker {
         if (stepsInMonth.containsKey(month)) {
             for (int i = 0; i < year.size(); i++) {
                 int steps = stepsInMonth.get(month).get(i);
+
                 if (i != 29) {
                     System.out.print((i + 1) + " день: " + steps + ", ");
-                } else {
+                    } else {
                     System.out.println((i + 1) + " день: " + steps);
                 }
                 sumSteps += steps;
@@ -69,8 +70,11 @@ public class StepTracker {
                 }
                 if (steps > targetSteps) {
                     thisSeries++;
-                } else {
                     bestSeries = Math.max(bestSeries, thisSeries);
+                } else {
+
+                    //как только вбиваем 30 день который больше цели шагов а когда меньше кол-ва цели то все нормально
+                    // это связанно имено с тем что это последний день в месяце
                     thisSeries = 0;
                 }
             }
